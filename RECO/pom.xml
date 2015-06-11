@@ -4,4 +4,92 @@
   <artifactId>RECO</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>com.canalplus.service.reco</name>
+<packaging>jar</packaging>
+
+		<properties>
+		<spring.version>4.0.6.RELEASE</spring.version>
+		<concordion.version>1.4.2</concordion.version>
+		<jackson.version>1.9.13</jackson.version>
+		<interact.version>1</interact.version>
+		<httpclient.version>3.1</httpclient.version>
+		<commonslang.version>3.4</commonslang.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+
+		<!-- Spring 3 dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+
+<!-- 		<dependency>
+			<groupId>org.concordion</groupId>
+			<artifactId>concordion</artifactId>
+			<version>${concordion.version}</version>
+		</dependency> -->
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${commonslang.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>interact</groupId>
+			<artifactId>interact_client</artifactId>
+			<version>${interact.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>interact</groupId>
+			<artifactId>interact</artifactId>
+			<version>${interact.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>interact</groupId>
+			<artifactId>JSON4J_Apache</artifactId>
+			<version>${interact.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>${httpclient.version}</version>
+		</dependency>
+
+
+	</dependencies>
 </project>
