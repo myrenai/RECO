@@ -72,11 +72,7 @@
 			<version>${interact.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>interact</groupId>
-			<artifactId>interact</artifactId>
-			<version>${interact.version}</version>
-		</dependency>
+
 
 		<dependency>
 			<groupId>interact</groupId>
