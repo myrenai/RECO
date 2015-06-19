@@ -1,27 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>RECO</groupId>
-  <artifactId>RECO</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>com.canalplus.service.reco</name>
-<packaging>jar</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>RECO</groupId>
+	<artifactId>RECO</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>com.canalplus.service.reco</name>
+	<packaging>jar</packaging>
 
-		<properties>
+	<properties>
 		<spring.version>4.0.6.RELEASE</spring.version>
-		<concordion.version>1.4.2</concordion.version>
 		<jackson.version>1.9.13</jackson.version>
 		<interact.version>1</interact.version>
 		<httpclient.version>3.1</httpclient.version>
-		<commonslang.version>3.4</commonslang.version>
+		<apachecommonslang3.version>3.4</apachecommonslang3.version>
+		<commonslang.version>2.2</commonslang.version>
+		<concordion.version>1.5.0</concordion.version>
+		<junit.version>3.8.1</junit.version>
+		<log4j.version>2.3</log4j.version>
 	</properties>
 	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-
 
 		<!-- Spring 3 dependencies -->
 		<dependency>
@@ -48,31 +45,27 @@
 			<version>${jackson.version}</version>
 		</dependency>
 
-<!-- 		<dependency>
+		<!-- Concordion dependencies -->
+		<dependency>
 			<groupId>org.concordion</groupId>
 			<artifactId>concordion</artifactId>
 			<version>${concordion.version}</version>
-		</dependency> -->
-
-		<dependency>
-			<groupId>org.apache.commons</groupId>
-			<artifactId>commons-lang3</artifactId>
-			<version>${commonslang.version}</version>
+			<scope>test</scope>
 		</dependency>
 
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.2</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
 		</dependency>
 
+		<!-- interact dependencies -->
 		<dependency>
 			<groupId>interact</groupId>
 			<artifactId>interact_client</artifactId>
 			<version>${interact.version}</version>
 		</dependency>
-
-
 
 		<dependency>
 			<groupId>interact</groupId>
@@ -85,7 +78,31 @@
 			<artifactId>commons-httpclient</artifactId>
 			<version>${httpclient.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apachecommonslang3.version}</version>
+		</dependency>
 
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commonslang.version}</version>
+		</dependency>
+
+		<!-- Log4J dependencies -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
 
 	</dependencies>
 </project>
