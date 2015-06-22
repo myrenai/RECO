@@ -7,7 +7,7 @@ public class Resultat {
 	/**
 	 * @param reponse
 	 */
-	public Resultat(boolean reponse) {
+	public Resultat(final boolean reponse) {
 		super();
 		this.reponse = reponse;
 	}
@@ -16,15 +16,15 @@ public class Resultat {
 	 * @return the reponse
 	 */
 	public boolean isReponse() {
-		return reponse;
+		return this.reponse;
 	}
 
 	/**
-	 * @param reponse the reponse to set
+	 * @param reponse
+	 *            the reponse to set
 	 */
-	public void setReponse(boolean reponse) {
+	public void setReponse(final boolean reponse) {
 		this.reponse = reponse;
 	}
-	
-	
+
 }

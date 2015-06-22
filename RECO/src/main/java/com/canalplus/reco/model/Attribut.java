@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * Model attribut addionnels d'une offre.
- * 
+ *
  * @author faagni
  *
  */
@@ -27,123 +27,123 @@ public class Attribut {
 	}
 
 	/**
-	 * @return the url
-	 */
-	public String getUrl() {
-		return url;
-	}
-
-	/**
-	 * @param url
-	 *            the url to set
-	 */
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	/**
 	 * @return the dateEffective
 	 */
 	public Date getDateEffective() {
-		return dateEffective;
-	}
-
-	/**
-	 * @param dateEffective
-	 *            the dateEffective to set
-	 */
-	public void setDateEffective(Date dateEffective) {
-		this.dateEffective = dateEffective;
+		return this.dateEffective;
 	}
 
 	/**
 	 * @return the dateExpiration
 	 */
 	public Date getDateExpiration() {
-		return dateExpiration;
-	}
-
-	/**
-	 * @param dateExpiration
-	 *            the dateExpiration to set
-	 */
-	public void setDateExpiration(Date dateExpiration) {
-		this.dateExpiration = dateExpiration;
+		return this.dateExpiration;
 	}
 
 	/**
 	 * @return the dureeExpiration
 	 */
 	public Double getDureeExpiration() {
-		return dureeExpiration;
-	}
-
-	/**
-	 * @param dureeExpiration
-	 *            the dureeExpiration to set
-	 */
-	public void setDureeExpiration(Double dureeExpiration) {
-		this.dureeExpiration = dureeExpiration;
-	}
-
-	/**
-	 * @return the methodeRTSelection
-	 */
-	public Double getMethodeRTSelection() {
-		return methodeRTSelection;
-	}
-
-	/**
-	 * @param methodeRTSelection
-	 *            the methodeRTSelection to set
-	 */
-	public void setMethodeRTSelection(Double methodeRTSelection) {
-		this.methodeRTSelection = methodeRTSelection;
+		return this.dureeExpiration;
 	}
 
 	/**
 	 * @return the labelCom
 	 */
 	public String getLabelCom() {
-		return labelCom;
-	}
-
-	/**
-	 * @param labelCom
-	 *            the labelCom to set
-	 */
-	public void setLabelCom(String labelCom) {
-		this.labelCom = labelCom;
+		return this.labelCom;
 	}
 
 	/**
 	 * @return the labelSpecial
 	 */
 	public String getLabelSpecial() {
-		return labelSpecial;
+		return this.labelSpecial;
 	}
 
 	/**
-	 * @param labelSpecial
-	 *            the labelSpecial to set
+	 * @return the methodeRTSelection
 	 */
-	public void setLabelSpecial(String labelSpecial) {
-		this.labelSpecial = labelSpecial;
+	public Double getMethodeRTSelection() {
+		return this.methodeRTSelection;
 	}
 
 	/**
 	 * @return the periodeLabelvalide
 	 */
 	public String getPeriodeLabelvalide() {
-		return periodeLabelvalide;
+		return this.periodeLabelvalide;
+	}
+
+	/**
+	 * @return the url
+	 */
+	public String getUrl() {
+		return this.url;
+	}
+
+	/**
+	 * @param dateEffective
+	 *            the dateEffective to set
+	 */
+	public void setDateEffective(final Date dateEffective) {
+		this.dateEffective = dateEffective;
+	}
+
+	/**
+	 * @param dateExpiration
+	 *            the dateExpiration to set
+	 */
+	public void setDateExpiration(final Date dateExpiration) {
+		this.dateExpiration = dateExpiration;
+	}
+
+	/**
+	 * @param dureeExpiration
+	 *            the dureeExpiration to set
+	 */
+	public void setDureeExpiration(final Double dureeExpiration) {
+		this.dureeExpiration = dureeExpiration;
+	}
+
+	/**
+	 * @param labelCom
+	 *            the labelCom to set
+	 */
+	public void setLabelCom(final String labelCom) {
+		this.labelCom = labelCom;
+	}
+
+	/**
+	 * @param labelSpecial
+	 *            the labelSpecial to set
+	 */
+	public void setLabelSpecial(final String labelSpecial) {
+		this.labelSpecial = labelSpecial;
+	}
+
+	/**
+	 * @param methodeRTSelection
+	 *            the methodeRTSelection to set
+	 */
+	public void setMethodeRTSelection(final Double methodeRTSelection) {
+		this.methodeRTSelection = methodeRTSelection;
 	}
 
 	/**
 	 * @param periodeLabelvalide
 	 *            the periodeLabelvalide to set
 	 */
-	public void setPeriodeLabelvalide(String periodeLabelvalide) {
+	public void setPeriodeLabelvalide(final String periodeLabelvalide) {
 		this.periodeLabelvalide = periodeLabelvalide;
+	}
+
+	/**
+	 * @param url
+	 *            the url to set
+	 */
+	public void setUrl(final String url) {
+		this.url = url;
 	}
 
 }

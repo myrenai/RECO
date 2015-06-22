@@ -4,44 +4,54 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Parametres implements Serializable{
+/**
+ *
+ * @author faagni
+ *
+ */
+public class Parametres implements Serializable {
 
-	private List<IdProfil> profil;
-	private List<Context> context;
-//	private String token;
-	
-	
-	
 	/**
-	 * @return the profil
+	 *
 	 */
-	public List<IdProfil> getProfil() {
-		return profil;
-	}
-	/**
-	 * 
-	 */
+	private static final long serialVersionUID = 1L;
+	private List<Parametre> profil;
+	private List<Parametre> context;
+
 	public Parametres() {
 		super();
-		this.profil = new ArrayList<IdProfil>();
-		this.context = new ArrayList<Context>();
+		this.profil = new ArrayList<Parametre>();
+		this.context = new ArrayList<Parametre>();
 	}
-	/**
-	 * @param profil the profil to set
-	 */
-	public void setProfil(List<IdProfil> profil) {
-		this.profil = profil;
-	}
+
 	/**
 	 * @return the context
 	 */
-	public List<Context> getContext() {
-		return context;
+	public List<Parametre> getContext() {
+		return this.context;
 	}
+
 	/**
-	 * @param context the context to set
+	 * @return the profil
 	 */
-	public void setContext(List<Context> context) {
+	public List<Parametre> getProfil() {
+		return this.profil;
+	}
+
+	/**
+	 * @param context
+	 *            the context to set
+	 */
+	public void setContext(List<Parametre> context) {
 		this.context = context;
 	}
+
+	/**
+	 * @param profil
+	 *            the profil to set
+	 */
+	public void setProfil(List<Parametre> profil) {
+		this.profil = profil;
+	}
+
 }

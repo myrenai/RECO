@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Model Offre.
- * 
+ *
  * @author faagni
  *
  */
@@ -20,7 +20,7 @@ public class Offre {
 
 	/**
 	 * constructeur de la classe offre.
-	 * 
+	 *
 	 * @param code
 	 *            code de l'offre
 	 * @param nom
@@ -32,8 +32,8 @@ public class Offre {
 	 * @param codeTraitement
 	 *            de l'offre
 	 */
-	public Offre(String code, String nom, String description, int score,
-			String codeTraitement) {
+	public Offre(final String code, final String nom, final String description,
+			final int score, final String codeTraitement) {
 		super();
 		this.code = code;
 		this.nom = nom;
@@ -44,93 +44,93 @@ public class Offre {
 	}
 
 	/**
+	 * @return the attributAddionnels
+	 */
+	public List<Attribut> getAttributAddionnels() {
+		return this.attributAddionnels;
+	}
+
+	/**
 	 * @return the code
 	 */
 	public String getCode() {
-		return code;
-	}
-
-	/**
-	 * @param code
-	 *            the code to set
-	 */
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	/**
-	 * @return the nom
-	 */
-	public String getNom() {
-		return nom;
-	}
-
-	/**
-	 * @param nom
-	 *            the nom to set
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * @param description
-	 *            the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	/**
-	 * @return the score
-	 */
-	public int getScore() {
-		return score;
-	}
-
-	/**
-	 * @param score
-	 *            the score to set
-	 */
-	public void setScore(int score) {
-		this.score = score;
+		return this.code;
 	}
 
 	/**
 	 * @return the codeTraitement
 	 */
 	public String getCodeTraitement() {
-		return codeTraitement;
+		return this.codeTraitement;
 	}
 
 	/**
-	 * @param codeTraitement
-	 *            the codeTraitement to set
+	 * @return the description
 	 */
-	public void setCodeTraitement(String codeTraitement) {
-		this.codeTraitement = codeTraitement;
+	public String getDescription() {
+		return this.description;
 	}
 
 	/**
-	 * @return the attributAddionnels
+	 * @return the nom
 	 */
-	public List<Attribut> getAttributAddionnels() {
-		return attributAddionnels;
+	public String getNom() {
+		return this.nom;
+	}
+
+	/**
+	 * @return the score
+	 */
+	public int getScore() {
+		return this.score;
 	}
 
 	/**
 	 * @param attributAddionnels
 	 *            the attributAddionnels to set
 	 */
-	public void setAttributAddionnels(List<Attribut> attributAddionnels) {
+	public void setAttributAddionnels(final List<Attribut> attributAddionnels) {
 		this.attributAddionnels = attributAddionnels;
+	}
+
+	/**
+	 * @param code
+	 *            the code to set
+	 */
+	public void setCode(final String code) {
+		this.code = code;
+	}
+
+	/**
+	 * @param codeTraitement
+	 *            the codeTraitement to set
+	 */
+	public void setCodeTraitement(final String codeTraitement) {
+		this.codeTraitement = codeTraitement;
+	}
+
+	/**
+	 * @param description
+	 *            the description to set
+	 */
+	public void setDescription(final String description) {
+		this.description = description;
+	}
+
+	/**
+	 * @param nom
+	 *            the nom to set
+	 */
+	public void setNom(final String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * @param score
+	 *            the score to set
+	 */
+	public void setScore(final int score) {
+		this.score = score;
 	}
 
 }

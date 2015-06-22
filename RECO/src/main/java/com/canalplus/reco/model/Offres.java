@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * model liste d'offres.
- * 
+ *
  * @author faagni
  *
  */
@@ -18,21 +18,21 @@ public class Offres {
 	 */
 	public Offres() {
 		super();
-		offre = new ArrayList<Offre>();
+		this.offre = new ArrayList<Offre>();
 	}
 
 	/**
 	 * @return the offre
 	 */
 	public List<Offre> getOffre() {
-		return offre;
+		return this.offre;
 	}
 
 	/**
 	 * @param offre
 	 *            the offre to set
 	 */
-	public void setOffre(List<Offre> offre) {
+	public void setOffre(final List<Offre> offre) {
 		this.offre = offre;
 	}
 
