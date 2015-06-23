@@ -1,0 +1,13 @@
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<body>
+	<p>
+		Quand j'envoie 
+		<pre concordion:set="#fullName">/V1/Offers/next</pre>
+		Pour récupérer des offres alors je dois recevoir <span concordion:assertEquals="getStatus(#fullName)">HTTP/1.1 200 OK</span>
+		avec le contenu suivant :
+	</p>
+	<p concordion:assertEquals="getOffersJson(#fullName)">
+	{"offre":[{"attributAddionnels":[],"description":null,"codeTraitement":"change pour le test par concordion","score":70,"code":"000000048","nom":"Shop Page - First Offer FR"},{"attributAddionnels":[],"description":null,"codeTraitement":"change pour le test par concordion","score":50,"code":"000000050","nom":"Shop Page - Second Offer FR"}]}
+	</p>
+</body>
+</html>
