@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans    
@@ -12,17 +13,10 @@
         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 	<context:component-scan base-package="com.canalplus.reco.controller" />
-<!-- 	<context:property-placeholder location="classpath:properties/recoParameters.properties"/> -->
 	
 	<mvc:annotation-driven />
 	
-	
-	<beans profile="test">
-        <context:property-placeholder
-            location="classpath:properties/recoParameters.properties"
-            ignore-unresolvable="true" />
-        <context:component-scan base-package="com.canalplus.reco.interactclient" />
-    </beans>
+	<context:property-placeholder location="classpath:properties/recoParameters.properties" />
 	
 </beans>
 

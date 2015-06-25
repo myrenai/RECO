@@ -17,7 +17,6 @@ import java.util.List;
 import org.apache.commons.json.JSONException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 
 import com.canalplus.reco.model.Parametre;
@@ -131,7 +130,7 @@ public class InteractRestClient {
 					contextData.add(contextParametre);
 				}
 				final NameValuePairImpl[] eventParameters = new NameValuePairImpl[contextData
-						.size()];
+				                                                                  .size()];
 				contextData.toArray(eventParameters);
 				cmd.setEventParameters(eventParameters);
 			}
@@ -145,7 +144,7 @@ public class InteractRestClient {
 						cmd.setAudienceID(new NameValuePairImpl[] { new NameValuePairImpl(
 								parametre.getName(),
 								NameValuePair.DATA_TYPE_NUMERIC, Double
-										.valueOf(parametre.getValue())) });
+								.valueOf(parametre.getValue())) });
 					}
 					if ("uaciinteractivechannelname"
 							.equals(parametre.getName())) {
@@ -162,9 +161,6 @@ public class InteractRestClient {
 		return cmd;
 	}
 
-	@Autowired
-	private final InteractProperties inetractProp = new InteractProperties();
-
 	/**
 	 * retourne le batch reponse qui contient les offres.
 	 *
@@ -172,24 +168,22 @@ public class InteractRestClient {
 	 * @throws JSONException
 	 * @throws IOException
 	 */
-	public BatchResponse getResponse(Parametres parametres)
+	public BatchResponse getResponse(Parametres parametres, String url,
+			String ipName, String audienceLevel, String numberRequested)
 			throws JSONException, IOException {
-		String url = "http://frrnseureka.fr.capgemini.com:7000/interact";
 		url += "/servlet/RestServlet";
 		final String sessionId = String.valueOf(System.currentTimeMillis());
-		final String audianceLevel = "Customer";
-		final String ipName = "pi_1";
-		final int numberRequested = 5;
-		// final String urrl = this.inetractProp.getUrl();
 		final List<Command> cmds = new ArrayList<Command>();
-		cmds.add(0, createStartSessionCommand(parametres, audianceLevel));
-		cmds.add(1, createGetOffersCommand(ipName, numberRequested));
+		cmds.add(0, createStartSessionCommand(parametres, audienceLevel));
+		cmds.add(
+				1,
+				createGetOffersCommand(ipName,
+						Integer.parseInt(numberRequested)));
 		cmds.add(2, createGetProfileCommand());
 		cmds.add(3, createEndSessionCommand());
 
 		RestClientConnector.initialize();
 		final RestClientConnector connector = new RestClientConnector(url);
-
 		final BatchResponse response = connector.executeBatch(sessionId,
 				cmds.toArray(new Command[0]), null, null);
 		return response;

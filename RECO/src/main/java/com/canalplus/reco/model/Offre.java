@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class Offre {
 
-	private List<ParametreOffre> offres;
+	private List<ParametreOffre> offre;
 
 	public Offre() {
 		super();
@@ -21,15 +21,15 @@ public class Offre {
 	 * @return the offres
 	 */
 	public List<ParametreOffre> getOffres() {
-		return this.offres;
+		return this.offre;
 	}
 
 	/**
 	 * @param offres
 	 *            the offres to set
 	 */
-	public void setOffres(List<ParametreOffre> offres) {
-		this.offres = offres;
+	public void setOffres(List<ParametreOffre> offre) {
+		this.offre = offre;
 	}
 
 }

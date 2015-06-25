@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.json.JSONException;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,6 +27,18 @@ public class OffresController {
 	private static final Logger logger = Logger
 			.getLogger(OffresController.class);
 
+	@Value("${reco.interact.url}")
+	String url;
+
+	@Value("${reco.inetract.ipName}")
+	String ipName;
+
+	@Value("${reco.interact.audienceLevel}")
+	String audianceLevel;
+
+	@Value("${reco.interact.numberRequested}")
+	String numberRequested;
+
 	/**
 	 * recuperation des offres avec ou sans pr�-calcul. Profil et context au
 	 * format JSON + Token d'authentification.
@@ -44,8 +57,10 @@ public class OffresController {
 		final InteractRestClient interactRestClient = new InteractRestClient();
 		final ServiceOffres serviceoffres = new ServiceOffres();
 		try {
+			final String url = this.url;
 			offre = serviceoffres.getListeOffres(interactRestClient
-					.getResponse(parametres));
+					.getResponse(parametres, this.url, this.ipName,
+							this.audianceLevel, this.numberRequested));
 		} catch (final JSONException je) {
 			logger.debug("erreur json", je);
 		} catch (final IOException ie) {
