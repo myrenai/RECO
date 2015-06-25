@@ -131,7 +131,7 @@ public class InteractRestClient {
 					contextData.add(contextParametre);
 				}
 				final NameValuePairImpl[] eventParameters = new NameValuePairImpl[contextData
-				                                                                  .size()];
+						.size()];
 				contextData.toArray(eventParameters);
 				cmd.setEventParameters(eventParameters);
 			}
@@ -145,7 +145,7 @@ public class InteractRestClient {
 						cmd.setAudienceID(new NameValuePairImpl[] { new NameValuePairImpl(
 								parametre.getName(),
 								NameValuePair.DATA_TYPE_NUMERIC, Double
-								.valueOf(parametre.getValue())) });
+										.valueOf(parametre.getValue())) });
 					}
 					if ("uaciinteractivechannelname"
 							.equals(parametre.getName())) {

@@ -1,6 +1,8 @@
 package com.canalplus.reco.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.json.JSONException;
 import org.apache.log4j.Logger;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.canalplus.reco.interactclient.InteractRestClient;
+import com.canalplus.reco.model.Offre;
 import com.canalplus.reco.model.Offres;
 import com.canalplus.reco.model.Parametres;
 import com.canalplus.reco.model.Resultat;
@@ -34,18 +37,19 @@ public class OffresController {
 	 * @throws IOException
 	 */
 	@RequestMapping(value = "/next", method = RequestMethod.POST)
-	public @ResponseBody Offres getOffres(@RequestBody Parametres parametres) {
+	public @ResponseBody List<Offre> getOffres(
+			@RequestBody Parametres parametres) {
 		logger.debug("pre-calcul offres");
-		Offres offre = null;
+		List<Offre> offre = new ArrayList<Offre>();
 		final InteractRestClient interactRestClient = new InteractRestClient();
 		final ServiceOffres serviceoffres = new ServiceOffres();
 		try {
-			offre = serviceoffres.getOffres(interactRestClient
+			offre = serviceoffres.getListeOffres(interactRestClient
 					.getResponse(parametres));
 		} catch (final JSONException je) {
 			logger.debug("erreur json", je);
 		} catch (final IOException ie) {
-
+			logger.debug("erreur", ie);
 		}
 		return offre;
 	}
