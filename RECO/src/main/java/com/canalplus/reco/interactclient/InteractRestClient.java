@@ -15,12 +15,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.json.JSONException;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.util.CollectionUtils;
 
 import com.canalplus.reco.model.Parametre;
 import com.canalplus.reco.model.Parametres;
+import com.canalplus.utils.Consts;
 import com.unicacorp.interact.api.BatchResponse;
 import com.unicacorp.interact.api.Command;
 import com.unicacorp.interact.api.CommandImpl;
@@ -42,11 +44,60 @@ import com.unicacorp.interact.api.rest.RestClientConnector;
  * @author faagni
  *
  */
-
 public class InteractRestClient {
 
 	public static final Logger logger = LogManager
 			.getLogger(InteractRestClient.class);
+
+	private static NameValuePairImpl[] convertAudienceID(List<Parametre> profil) {
+		final List<NameValuePairImpl> audienceIDList = new ArrayList<NameValuePairImpl>();
+		for (final Parametre parametre : profil) {
+			if (parametre.getName() != null
+					&& parametre.getName()
+							.startsWith(Consts.PREFIX_AUDIENCE_ID)) {
+				final NameValuePairImpl audienceID = new NameValuePairImpl(
+						StringUtils.substringAfter(parametre.getName(),
+								Consts.PREFIX_AUDIENCE_ID),
+								NameValuePair.DATA_TYPE_NUMERIC,
+								Double.valueOf(parametre.getValue()));
+				audienceIDList.add(audienceID);
+			}
+		}
+		final NameValuePairImpl[] audienceIDArray = audienceIDList
+				.toArray(new NameValuePairImpl[audienceIDList.size()]);
+		return audienceIDArray;
+	}
+
+	/**
+	 * Convert list context en entree en event parameters de type
+	 * NameValuePairImp.
+	 *
+	 * @param context
+	 * @return eventParameters
+	 */
+	private static NameValuePairImpl[] convertContext(List<Parametre> context) {
+		final List<NameValuePairImpl> contextInteract = new ArrayList<NameValuePairImpl>();
+		for (final Parametre parametre : context) {
+			NameValuePairImpl contextParametre;
+			if (Consts.DATA_TYPE_NAME_STRING.equals(parametre.getDataType())) {
+				contextParametre = new NameValuePairImpl(parametre.getName(),
+						NameValuePair.DATA_TYPE_STRING, parametre.getValue());
+			} else if (Consts.DATA_TYPE_NAME_NUMERIC.equals(parametre
+					.getDataType())) {
+				contextParametre = new NameValuePairImpl(parametre.getName(),
+						NameValuePair.DATA_TYPE_NUMERIC,
+						Double.valueOf(parametre.getValue()));
+			} else {
+				contextParametre = new NameValuePairImpl(parametre.getName(),
+						NameValuePair.DATA_TYPE_DATETIME, parametre.getValue());
+			}
+			contextInteract.add(contextParametre);
+		}
+		final NameValuePairImpl[] eventParameters = new NameValuePairImpl[contextInteract
+		                                                                  .size()];
+		contextInteract.toArray(eventParameters);
+		return eventParameters;
+	}
 
 	/**
 	 * permet de fermer la session.
@@ -65,10 +116,8 @@ public class InteractRestClient {
 	 * Recupere les offres.
 	 *
 	 * @param ipName
-	 *            nom du point d'interaction
 	 * @param numberRequested
-	 *            nombre de requete d'offre
-	 * @return cmd
+	 * @return
 	 * @throws JSONException
 	 */
 	private static Command createGetOffersCommand(final String ipName,
@@ -105,56 +154,27 @@ public class InteractRestClient {
 			String audienceLevel) throws JSONException {
 		final CommandImpl cmd = new CommandImpl();
 		cmd.setMethodIdentifier(Command.COMMAND_STARTSESSION);
+		// Audience level
+		cmd.setAudienceLevel(audienceLevel);
 		if (parametres != null) {
-			// donnees du context => EventParameters
+			// Event parameters
 			if (!CollectionUtils.isEmpty(parametres.getContext())) {
-				final List<NameValuePairImpl> contextData = new ArrayList<NameValuePairImpl>();
-				for (final Parametre parametre : parametres.getContext()) {
-					NameValuePairImpl contextParametre;
-					if ("string".equals(parametre.getDataType())) {
-						contextParametre = new NameValuePairImpl(
-								parametre.getName(),
-								NameValuePair.DATA_TYPE_STRING,
-								parametre.getValue());
-					} else if ("numeric".equals(parametre.getDataType())) {
-						contextParametre = new NameValuePairImpl(
-								parametre.getName(),
-								NameValuePair.DATA_TYPE_NUMERIC,
-								Double.valueOf(parametre.getValue()));
-					} else {
-						contextParametre = new NameValuePairImpl(
-								parametre.getName(),
-								NameValuePair.DATA_TYPE_DATETIME,
-								parametre.getValue());
-					}
-					contextData.add(contextParametre);
-				}
-				final NameValuePairImpl[] eventParameters = new NameValuePairImpl[contextData
-				                                                                  .size()];
-				contextData.toArray(eventParameters);
-				cmd.setEventParameters(eventParameters);
+				cmd.setEventParameters(convertContext(parametres.getContext()));
 			}
 			// donnees du profil
 			// InteractiveChannel => uaciinteractivechannelname
-			// AudienceId => customerid
-			// AudianceLevel
 			if (!CollectionUtils.isEmpty(parametres.getProfil())) {
+				// Audience ID
+				cmd.setAudienceID(convertAudienceID(parametres.getProfil()));
 				for (final Parametre parametre : parametres.getProfil()) {
-					if ("customerid".equals(parametre.getName())) {
-						cmd.setAudienceID(new NameValuePairImpl[] { new NameValuePairImpl(
-								parametre.getName(),
-								NameValuePair.DATA_TYPE_NUMERIC, Double
-								.valueOf(parametre.getValue())) });
-					}
-					if ("uaciinteractivechannelname"
-							.equals(parametre.getName())) {
+					if (Consts.INTERACTIVE_CHANEL_NAME.equals(parametre
+							.getName())) {
 						cmd.setInteractiveChannel(parametre.getValue());
 					}
 				}
-				cmd.setAudienceLevel(audienceLevel);
 			}
 		}
-		// permet de reetiliser la session avec l'id session
+		// permet de re utiliser la session avec l'id session
 		// si la seesion n'existe pas, elle est cree
 		cmd.setRelyOnExistingSession(false);
 		cmd.setDebug(true);
@@ -170,8 +190,8 @@ public class InteractRestClient {
 	 */
 	public BatchResponse getResponse(Parametres parametres, String url,
 			String ipName, String audienceLevel, String numberRequested)
-			throws JSONException, IOException {
-		url += "/servlet/RestServlet";
+					throws JSONException, IOException {
+		url += Consts.URL_INTERACT;
 		final String sessionId = String.valueOf(System.currentTimeMillis());
 		final List<Command> cmds = new ArrayList<Command>();
 		cmds.add(0, createStartSessionCommand(parametres, audienceLevel));

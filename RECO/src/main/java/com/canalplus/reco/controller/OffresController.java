@@ -40,16 +40,12 @@ public class OffresController {
 	String numberRequested;
 
 	/**
-	 * recuperation des offres avec ou sans pr�-calcul. Profil et context au
-	 * format JSON + Token d'authentification.
+	 * Recupere des offres avec ou sans precalcul.
 	 *
-	 * @param context
-	 * @param token
-	 * @return offres
-	 * @throws JSONException
-	 * @throws IOException
+	 * @param parametres
+	 * @return
 	 */
-	@RequestMapping(value = "/next", method = RequestMethod.POST)
+	@RequestMapping(value = "/next", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public @ResponseBody List<Offre> getOffres(
 			@RequestBody Parametres parametres) {
 		logger.debug("pre-calcul offres");
@@ -57,7 +53,6 @@ public class OffresController {
 		final InteractRestClient interactRestClient = new InteractRestClient();
 		final ServiceOffres serviceoffres = new ServiceOffres();
 		try {
-			final String url = this.url;
 			offre = serviceoffres.getListeOffres(interactRestClient
 					.getResponse(parametres, this.url, this.ipName,
 							this.audianceLevel, this.numberRequested));
@@ -70,8 +65,8 @@ public class OffresController {
 	}
 
 	/**
-	 * Modification de l'�tat d'une offre. Offres avec nouvel �tat au format
-	 * JSON + Token d'authentification.
+	 * Modification de l'etat d'une offre. Offres avec nouvel etat au format
+	 * JSON.
 	 *
 	 * @param offres
 	 * @param token
@@ -79,15 +74,22 @@ public class OffresController {
 	 * @throws JSONException
 	 * @throws IOException
 	 */
-	// @RequestMapping(value = "/results", method = RequestMethod.POST)
-	// public Offres getResults(@RequestBody final Context context)
-	// throws JSONException, IOException {
-	// final InteractRestClient interactRestClient = new InteractRestClient();
-	// final ServiceOffres serviceoffres = new ServiceOffres();
-	// final Offres offre = serviceoffres.getOffres(interactRestClient
-	// .getResponse());
-	// return offre;
-	// }
+	@RequestMapping(value = "/results", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	public List<Offre> getResults(@RequestBody Parametres parametres) {
+		List<Offre> offre = new ArrayList<Offre>();
+		final InteractRestClient interactRestClient = new InteractRestClient();
+		final ServiceOffres serviceoffres = new ServiceOffres();
+		try {
+			offre = serviceoffres.getListeOffres(interactRestClient
+					.getResponse(parametres, this.url, this.ipName,
+							this.audianceLevel, this.numberRequested));
+		} catch (final JSONException je) {
+			logger.debug("erreur json", je);
+		} catch (final IOException ie) {
+			logger.debug("erreur", ie);
+		}
+		return offre;
+	}
 
 	/**
 	 * Pr�-calcul des offres. Profil et context au format JSON + Token
@@ -97,11 +99,8 @@ public class OffresController {
 	 * @param token
 	 * @return resultat boolean
 	 */
-	@RequestMapping(value = "/context", method = RequestMethod.POST)
-	public Resultat precalculOffre
-	// (@RequestParam(value="context")Context context,
-	// @RequestParam(value="token") String token)
-	(@RequestBody final Parametres entry) {
+	@RequestMapping(value = "/context", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
+	public Resultat precalculOffre(@RequestBody final Parametres entry) {
 		return new Resultat(true);
 	}
 

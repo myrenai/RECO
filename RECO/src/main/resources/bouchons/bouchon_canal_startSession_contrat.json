@@ -21,18 +21,14 @@
       "dateType": "String"
     },
     {
-      "AudienceID": [
-        {
-          "name": "ID_CLIENT",
-          "value": 1,
-          "dataType": "numeric"
-        },
-        {
-          "name": "ID_CONTRAT",
-          "value": 1,
-          "dataType": "numeric"
-        }
-      ]
+      "name": "audienceID_CLIENT",
+      "value": 1,
+      "dataType": "numeric"
+    },
+    {
+      "name": "audienceID_CONTRAT",
+      "value": 1,
+      "dataType": "numeric"
     },
     {
       "name": "audienceLevel",

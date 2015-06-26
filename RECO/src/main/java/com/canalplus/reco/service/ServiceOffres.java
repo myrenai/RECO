@@ -10,6 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.canalplus.reco.model.Offre;
 import com.canalplus.reco.model.ParametreOffre;
+import com.canalplus.utils.Consts;
 import com.unicacorp.interact.api.BatchResponse;
 import com.unicacorp.interact.api.NameValuePair;
 import com.unicacorp.interact.api.Offer;
@@ -20,12 +21,6 @@ public class ServiceOffres {
 
 	public static final Logger logger = LogManager
 			.getLogger(ServiceOffres.class);
-
-	public static final String ATTRIBUT_OFFRE_CODE = "code";
-	public static final String ATTRIBUT_OFFRE_NOM = "nom";
-	public static final String ATTRIBUT_OFFRE_DESCRIPTION = "description";
-	public static final String ATTRIBUT_OFFRE_SCORE = "score";
-	public static final String ATTRIBUT_OFFRE_CODE_TRAITREMENT = "codeTraitement";
 
 	/**
 	 * permet de récuperer la liste d'offres d'interact
@@ -93,16 +88,18 @@ public class ServiceOffres {
 			for (final String s : offre.getOfferCode()) {
 				builder.append(s);
 			}
-			listeParametresOffres.add(new ParametreOffre(ATTRIBUT_OFFRE_CODE,
-					builder.toString()));
-			listeParametresOffres.add(new ParametreOffre(ATTRIBUT_OFFRE_NOM,
-					offre.getOfferName()));
 			listeParametresOffres.add(new ParametreOffre(
-					ATTRIBUT_OFFRE_DESCRIPTION, offre.getDescription()));
-			listeParametresOffres.add(new ParametreOffre(ATTRIBUT_OFFRE_SCORE,
-					Integer.toString(offre.getScore())));
+					Consts.ATTRIBUT_OFFRE_CODE, builder.toString()));
 			listeParametresOffres.add(new ParametreOffre(
-					ATTRIBUT_OFFRE_CODE_TRAITREMENT, offre.getTreatmentCode()));
+					Consts.ATTRIBUT_OFFRE_NOM, offre.getOfferName()));
+			listeParametresOffres.add(new ParametreOffre(
+					Consts.ATTRIBUT_OFFRE_DESCRIPTION, offre.getDescription()));
+			listeParametresOffres.add(new ParametreOffre(
+					Consts.ATTRIBUT_OFFRE_SCORE, Integer.toString(offre
+							.getScore())));
+			listeParametresOffres.add(new ParametreOffre(
+					Consts.ATTRIBUT_OFFRE_CODE_TRAITREMENT, offre
+							.getTreatmentCode()));
 			final NameValuePair[] attributs = offre.getAdditionalAttributes();
 			if (attributs != null && attributs.length != 0) {
 				for (final NameValuePair attribut : attributs) {

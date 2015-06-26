@@ -21,13 +21,9 @@
       "dateType": "String"
     },
     {
-      "AudienceID": [
-        {
-          "name": "ID_INDIVIDU",
-          "value": 1,
-          "dataType": "numeric"
-        }
-      ]
+      "name": "audienceID_INDIVIDU",
+      "value": 1,
+      "dataType": "numeric"
     },
     {
       "name": "audienceLevel",

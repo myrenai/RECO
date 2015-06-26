@@ -1,38 +1,34 @@
 {
   "profil": [
-    {      
-      "name":"sessionId",
-      "value":1,
-      "dateType":"numeric"
+    {
+      "name": "sessionId",
+      "value": 1,
+      "dateType": "numeric"
     },
     {
-      "name":"relyOnExistingSession",
-      "value":true,
-      "dateType":"boolean"
+      "name": "relyOnExistingSession",
+      "value": true,
+      "dateType": "boolean"
     },
     {
-      "name":"initialDebugFlag",
-      "value":false,
-      "dateType":"boolean"
+      "name": "initialDebugFlag",
+      "value": false,
+      "dateType": "boolean"
     },
     {
-      "name":"interactiveChanel",
-      "value":"canal_bac_a_sable",
-      "dateType":"String"
+      "name": "interactiveChanel",
+      "value": "canal_bac_a_sable",
+      "dateType": "String"
     },
     {
-      "AudienceID": [
-        {
-          "name": "ID_CLIENT",
-          "value": 1,
-          "dataType": "numeric"
-        }
-      ]
+      "name": "audienceID_CLIENT",
+      "value": 1,
+      "dataType": "numeric"
     },
     {
-      "name":"audienceLevel",
-      "value":"Client",
-      "dateType":"String"
+      "name": "audienceLevel",
+      "value": "Client",
+      "dateType": "String"
     }
   ],
   "contexte": [

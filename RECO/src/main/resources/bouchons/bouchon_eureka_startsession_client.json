@@ -36,7 +36,7 @@
          "dataType":"string"
       },
       {
-         "name":"customerid",
+         "name":"audienceID_customerid",
          "value":"114.0",
          "dataType":"numeric"
       },
@@ -116,7 +116,7 @@
          "dataType":"numeric"
       },
       {
-         "name":"uaciinteractivechannelname",
+         "name":"interactiveChanel",
          "value":"Mobile_app",
          "dataType":"string"
       },

@@ -17,11 +17,23 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 @PropertySource("classpath:recoParameters.properties")
 public class RestConfiguration {
 
+	/**
+	 * Resolves ${...} placeholders against local properties and/or system
+	 * properties and environment variables.
+	 * 
+	 * @return
+	 */
 	@Bean
 	public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
 		return new PropertySourcesPlaceholderConfigurer();
 	}
 
+	/**
+	 * Spring MVC View that renders JSON content by serializing the model for
+	 * the current request using Jackson 2's ObjectMapper.
+	 * 
+	 * @return
+	 */
 	@Bean
 	public View jsonTemplate() {
 		final MappingJackson2JsonView view = new MappingJackson2JsonView();
@@ -29,6 +41,11 @@ public class RestConfiguration {
 		return view;
 	}
 
+	/**
+	 * Interface to be implemented by objects that can resolve views by name.
+	 * 
+	 * @return
+	 */
 	@Bean
 	public ViewResolver viewResolver() {
 		return new BeanNameViewResolver();
