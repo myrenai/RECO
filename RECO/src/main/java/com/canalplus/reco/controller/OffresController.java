@@ -34,10 +34,16 @@ public class OffresController {
 	String ipName;
 
 	@Value("${reco.interact.audienceLevel}")
-	String audianceLevel;
+	String audienceLevel;
 
 	@Value("${reco.interact.numberRequested}")
 	String numberRequested;
+
+	@Value("reco.interact.relyOnExistingSession")
+	String relyOnExistingSession;
+
+	@Value("reco.interact.debugOption")
+	String debugOption;
 
 	/**
 	 * Recupere des offres avec ou sans precalcul.
@@ -55,7 +61,9 @@ public class OffresController {
 		try {
 			offre = serviceoffres.getListeOffres(interactRestClient
 					.getResponse(parametres, this.url, this.ipName,
-							this.audianceLevel, this.numberRequested));
+							this.audienceLevel, this.numberRequested,
+							Boolean.valueOf(this.relyOnExistingSession),
+							Boolean.valueOf(this.debugOption)));
 		} catch (final JSONException je) {
 			logger.debug("erreur json", je);
 		} catch (final IOException ie) {
@@ -82,7 +90,9 @@ public class OffresController {
 		try {
 			offre = serviceoffres.getListeOffres(interactRestClient
 					.getResponse(parametres, this.url, this.ipName,
-							this.audianceLevel, this.numberRequested));
+							this.audienceLevel, this.numberRequested,
+							Boolean.valueOf(this.relyOnExistingSession),
+							Boolean.valueOf(this.debugOption)));
 		} catch (final JSONException je) {
 			logger.debug("erreur json", je);
 		} catch (final IOException ie) {

@@ -54,12 +54,12 @@ public class InteractRestClient {
 		for (final Parametre parametre : profil) {
 			if (parametre.getName() != null
 					&& parametre.getName()
-							.startsWith(Consts.PREFIX_AUDIENCE_ID)) {
+					.startsWith(Consts.PREFIX_AUDIENCE_ID)) {
 				final NameValuePairImpl audienceID = new NameValuePairImpl(
 						StringUtils.substringAfter(parametre.getName(),
 								Consts.PREFIX_AUDIENCE_ID),
-								NameValuePair.DATA_TYPE_NUMERIC,
-								Double.valueOf(parametre.getValue()));
+						NameValuePair.DATA_TYPE_NUMERIC,
+						Double.valueOf(parametre.getValue()));
 				audienceIDList.add(audienceID);
 			}
 		}
@@ -94,7 +94,7 @@ public class InteractRestClient {
 			contextInteract.add(contextParametre);
 		}
 		final NameValuePairImpl[] eventParameters = new NameValuePairImpl[contextInteract
-		                                                                  .size()];
+				.size()];
 		contextInteract.toArray(eventParameters);
 		return eventParameters;
 	}
@@ -189,8 +189,9 @@ public class InteractRestClient {
 	 * @throws IOException
 	 */
 	public BatchResponse getResponse(Parametres parametres, String url,
-			String ipName, String audienceLevel, String numberRequested)
-					throws JSONException, IOException {
+			String ipName, String audienceLevel, String numberRequested,
+			boolean relyOnExistingSession, boolean debugOption)
+			throws JSONException, IOException {
 		url += Consts.URL_INTERACT;
 		final String sessionId = String.valueOf(System.currentTimeMillis());
 		final List<Command> cmds = new ArrayList<Command>();
