@@ -8,7 +8,7 @@
 	<packaging>jar</packaging>
 
 	<properties>
-		<spring.version>4.0.6.RELEASE</spring.version>
+		<spring.version>4.1.6.RELEASE</spring.version>
 		<jackson.version>1.9.13</jackson.version>
 		<interact.version>1</interact.version>
 		<httpclient.version>3.1</httpclient.version>
