@@ -5,10 +5,10 @@
 	<artifactId>RECO</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>com.canalplus.service.reco</name>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<properties>
-		<spring.version>4.1.6.RELEASE</spring.version>
+		<spring.version>4.0.6.RELEASE</spring.version>
 		<jackson.version>1.9.13</jackson.version>
 		<interact.version>1</interact.version>
 		<httpclient.version>3.1</httpclient.version>
@@ -79,7 +79,7 @@
 			<artifactId>commons-httpclient</artifactId>
 			<version>${httpclient.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -93,23 +93,19 @@
 		</dependency>
 
 		<!-- Log4J dependencies -->
-		<!-- <dependency>
-			<groupId>org.apache.logging.log4j</groupId>
-			<artifactId>log4j-api</artifactId>
-			<version>${log4j.version}</version>
-		</dependency> -->
-		
+		<!-- <dependency> <groupId>org.apache.logging.log4j</groupId> <artifactId>log4j-api</artifactId> 
+			<version>${log4j.version}</version> </dependency> -->
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.3</version>
 		</dependency>
-
 	</dependencies>
 </project>
