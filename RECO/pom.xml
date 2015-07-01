@@ -15,7 +15,7 @@
 		<apachecommonslang3.version>3.4</apachecommonslang3.version>
 		<commonslang.version>2.2</commonslang.version>
 		<concordion.version>1.5.0</concordion.version>
-		<junit.version>3.8.1</junit.version>
+		<junit.version>4.11</junit.version>
 		<!-- <log4j.version>2.3</log4j.version> -->
 		<log4j.version>1.2.17</log4j.version>
 	</properties>
