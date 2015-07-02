@@ -1,0 +1,114 @@
+[
+  {
+    "offre": [
+      {
+        "name": "code",
+        "value": "000000048"
+      },
+      {
+        "name": "nom",
+        "value": "Shop Page - First Offer FR"
+      },
+      {
+        "name": "description",
+        "value": "Cest est une description d'offre bouchon: 1. \n Première ligne \n Troisième ligne \n Seconde ligne\n "
+      },
+      {
+        "name": "score",
+        "value": "70"
+      },
+      {
+        "name": "codeTraitement",
+        "value": "ee.31.ffffffffda1ca03c.ffffffffe098c29c"
+      },
+      {
+        "name": "RTSelectionMethod",
+        "value": null
+      },
+      {
+        "name": "validPeriodLabel",
+        "value": "A renseigner"
+      },
+      {
+        "name": "comLabel",
+        "value": "A renseigner"
+      },
+      {
+        "name": "ExpirationDuration",
+        "value": null
+      },
+      {
+        "name": "EffectiveDate",
+        "value": null
+      },
+      {
+        "name": "specialLabel",
+        "value": "FR"
+      },
+      {
+        "name": "CreativeURL",
+        "value": "<a href=\"http://www.lesoffrescanal.fr/media/cms/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/wysiwyg/MAJ_FEV2015/offer_cplus_AL.jpg\">"
+      },
+      {
+        "name": "ExpirationDate",
+        "value": null
+      }
+    ]
+  },
+  {
+    "offre": [
+      {
+        "name": "code",
+        "value": "000000050"
+      },
+      {
+        "name": "nom",
+        "value": "Shop Page - Second Offer FR"
+      },
+      {
+        "name": "description",
+        "value": "Cest est une description d'offre bouchon: 1. \n Première ligne \n Troisième ligne \n Seconde ligne\n "
+      },
+      {
+        "name": "score",
+        "value": "50"
+      },
+      {
+        "name": "codeTraitement",
+        "value": "ee.33.ffffffffc50a86b4.ffffffffcb86a914"
+      },
+      {
+        "name": "RTSelectionMethod",
+        "value": null
+      },
+      {
+        "name": "validPeriodLabel",
+        "value": "A renseigner"
+      },
+      {
+        "name": "comLabel",
+        "value": "A renseigner"
+      },
+      {
+        "name": "ExpirationDuration",
+        "value": null
+      },
+      {
+        "name": "EffectiveDate",
+        "value": null
+      },
+      {
+        "name": "specialLabel",
+        "value": "FR"
+      },
+      {
+        "name": "CreativeURL",
+        "value": "<a href=\"http://www.lesoffrescanal.fr/media/cms/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/wysiwyg/MAJ_FEV2015/offer_cplus_AL.jpg\">"
+      },
+      {
+        "name": "ExpirationDate",
+        "value": null
+      }
+    ]
+  }
+]

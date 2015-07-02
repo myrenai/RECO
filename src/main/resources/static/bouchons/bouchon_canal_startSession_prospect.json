@@ -1,0 +1,116 @@
+{
+  "profil": [
+    {
+      "name": "sessionId",
+      "value": 1,
+      "dateType": "numeric"
+    },
+    {
+      "name": "relyOnExistingSession",
+      "value": "1",
+      "dateType": "String"
+    },
+    {
+      "name": "initialDebugFlag",
+      "value": "0",
+      "dateType": "String"
+    },
+    {
+      "name": "interactiveChanel",
+      "value": "canal_bac_a_sable",
+      "dateType": "String"
+    },
+    {
+      "name": "audienceID_INDIVIDU",
+      "value": 1,
+      "dataType": "numeric"
+    },
+    {
+      "name": "audienceLevel",
+      "value": "Prospect",
+      "dateType": "String"
+    }
+  ],
+  "contexte": [
+    {
+      "name": "CTX_PERIMETRE",
+      "value": "RESILIATION",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_TT_SPORT",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_FOOT",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_RUGBY",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_F1",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_BASKET",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_GOLF",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_TENNIS",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_AUTRE_SPORT",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_TT_CINEMA",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_FILM_RECENT",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_SERIES",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_JEUNESSE",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_DECOUV",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_DIVERT",
+      "value": "0",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_APPETENCE_ADULTE",
+      "value": "0",
+      "dataType": "String"
+    }
+  ]
+}

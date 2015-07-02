@@ -1,0 +1,47 @@
+<!-- Navigation -->
+
+
+	<nav class="navbar navbar-default" role="navigation" style="background-color: GhostWhite">
+	    <div class="container" ng-controller="NavbarCtrl">
+			<div class="row navbar-top" style="height: 90px">
+				<div class="col-md-8">
+					Rest Web Service Demo
+				</div>
+				<div class="col-md-2 text-right" >
+					<br><br>
+					<span class="glyphicon glyphicon-phone"></span> Contacts
+				</div>
+				<div class="col-md-2 text-right" >
+				<br><br>
+					<span class="glyphicon glyphicon-user"></span>  M. Pierre Duchêne
+				</div>
+			</div>
+			
+	        <!-- Collect the nav links, forms, and other content for toggling -->
+	       	<!-- Menu items -->
+	       	<div class="row" style="background-color: LightBlue">
+	       	<div class="col-md-9"  style="padding-left: 0px !important; margin-left: 0px !important;">
+	            <ul class="nav navbar-nav" style="background-color: SkyBlue" >	
+	            	<li >
+	                    <a href="/"><span class="glyphicon glyphicon-home"></span></a>
+	                </li>
+	                <li ng-repeat="item in items" ng-class="{active : isActive(item.link)}">
+	                    <a href="/{{item.link}}">{{item.label}}</a>
+	                </li>
+	            </ul>
+	         </div>
+	         <div class="col-md-3" >
+		           <!-- Menu form -->
+		           <form class="navbar-form navbar-right" role="search" >
+					  	<div class="form-group">
+					    	<input type="text" class="l_input" input-lg" placeholder="Rechercher une information ..." size="32">
+					    </div>&nbsp;&nbsp;
+					  	<span class="glyphicon glyphicon-search"></span>&nbsp;&nbsp;
+					</form>
+			</div>
+			</div>
+	        <!-- /.navbar-collapse -->
+	    </div>
+	    <!-- /.container -->
+	</nav>
+

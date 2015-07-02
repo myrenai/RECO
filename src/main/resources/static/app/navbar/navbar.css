@@ -1,0 +1,42 @@
+.navbar-default .navbar-nav > li > a {
+    color: GhostWhite;
+    font-size: 15px;
+    font-stretch: condensed;
+}
+.navbar-default {
+    background-color: white;
+    border-color: GhostWhite;
+}
+
+.navbar-top {
+	color: SteelBlue;
+	font-size: 95%;
+	font-weight: bold;
+}
+
+.navbar-nav > li {
+	border-right-style: solid;
+	border-right-width: thin;
+	border-right-color: GhostWhite;
+	margin-left: 0px;
+}
+
+.navbar-nav > li > a, .navbar-brand {
+    padding-top:0px !important; 
+    padding-bottom:0px !important;
+}
+
+.navbar-nav li a {
+ line-height: 42px;
+}
+
+.l_input {
+	background-color: LightBlue;
+    border: 0;
+	margin-top : 0px !important;
+	margin-bottom : 0px !important;
+	height: 25px;
+	font-style: italic;
+	color: SteelBlue;
+	padding-left: 5px;
+}

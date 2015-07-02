@@ -1,0 +1,30 @@
+<div ng-include="'app/navbar/navbar.html'"></div>
+<!-- Page Content -->
+<div class="container" >
+
+	<form ng-submit="sendPost()">
+	    <textarea id="jsonEntry" rows="10" cols="50" ng-model="jsonEntryData"></textarea>
+	    <button type="submit">Send</button>
+	</form>
+	
+	<div ng-repeat="offers in data.offres">
+		<div ng-repeat="offer in offers">
+			<table class="table table-bordered">
+				<tr>
+					<td><b>Nom</b></td>
+					<td>{{offer[1].value}}</td>
+					<td><p ng-bind-html="trustAsHtml(offer[11].value)"></p></td>
+				</tr>
+				<tr>
+					<td><b>Description</b></td>
+					<td colspan="2"><p ng-bind-html="trustAsHtml(offer[2].value)"></p></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</div>
+
+<br>
+<!-- Footer -->
+<div ng-include="'app/footer.html'"></div>
