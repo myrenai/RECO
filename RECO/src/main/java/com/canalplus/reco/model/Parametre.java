@@ -7,7 +7,7 @@ package com.canalplus.reco.model;
  * @author faagni
  *
  */
-public class Parametre extends ParametreOffre {
+public class Parametre extends AttributOffre {
 
 	/**
 	 *

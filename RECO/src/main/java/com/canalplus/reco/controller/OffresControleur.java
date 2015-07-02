@@ -20,12 +20,16 @@ import com.canalplus.reco.model.Parametres;
 import com.canalplus.reco.model.Resultat;
 import com.canalplus.reco.service.ServiceOffres;
 
+/**
+ *
+ * @author faagni
+ *
+ */
 @RestController
 @RequestMapping("/V1/Offers")
-public class OffresController {
+public class OffresControleur {
 
-	private static final Logger logger = Logger
-			.getLogger(OffresController.class);
+	private static final Logger logger = Logger.getLogger(OffresControleur.class);
 
 	@Value("${reco.interact.url}")
 	String url;
@@ -52,18 +56,15 @@ public class OffresController {
 	 * @return
 	 */
 	@RequestMapping(value = "/next", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-	public @ResponseBody List<Offre> getOffres(
-			@RequestBody Parametres parametres) {
+	public @ResponseBody List<Offre> getOffres(@RequestBody Parametres parametres) {
 		logger.debug("pre-calcul offres");
 		List<Offre> offre = new ArrayList<Offre>();
 		final InteractRestClient interactRestClient = new InteractRestClient();
 		final ServiceOffres serviceoffres = new ServiceOffres();
 		try {
-			offre = serviceoffres.getListeOffres(interactRestClient
-					.getResponse(parametres, this.url, this.ipName,
-							this.audienceLevel, this.numberRequested,
-							Boolean.valueOf(this.relyOnExistingSession),
-							Boolean.valueOf(this.debugOption)));
+			offre = serviceoffres.getListeOffres(interactRestClient.getResponse(parametres, this.url, this.ipName,
+					this.audienceLevel, this.numberRequested, Boolean.valueOf(this.relyOnExistingSession),
+					Boolean.valueOf(this.debugOption)));
 		} catch (final JSONException je) {
 			logger.debug("erreur json", je);
 		} catch (final IOException ie) {
@@ -88,11 +89,9 @@ public class OffresController {
 		final InteractRestClient interactRestClient = new InteractRestClient();
 		final ServiceOffres serviceoffres = new ServiceOffres();
 		try {
-			offre = serviceoffres.getListeOffres(interactRestClient
-					.getResponse(parametres, this.url, this.ipName,
-							this.audienceLevel, this.numberRequested,
-							Boolean.valueOf(this.relyOnExistingSession),
-							Boolean.valueOf(this.debugOption)));
+			offre = serviceoffres.getListeOffres(interactRestClient.getResponse(parametres, this.url, this.ipName,
+					this.audienceLevel, this.numberRequested, Boolean.valueOf(this.relyOnExistingSession),
+					Boolean.valueOf(this.debugOption)));
 		} catch (final JSONException je) {
 			logger.debug("erreur json", je);
 		} catch (final IOException ie) {
