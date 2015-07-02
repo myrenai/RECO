@@ -1,6 +1,3 @@
-/**
- *
- */
 package specs;
 
 import java.io.FileInputStream;
@@ -23,7 +20,7 @@ import org.junit.runner.RunWith;
 @RunWith(ConcordionRunner.class)
 public class StartSessionFixture {
 	private static final String URI = "http://localhost:8080/RECO/";
-	private static final String PATH_BOUCHON = "D:/Projets/RECO/workspaces/ReposRECO/RECO/RECO/src/main/resources/bouchons/bouchon_eureka_startsession_client.json";
+	private static final String PATH_BOUCHON = "D:/Projets/RECO/WSRECO/RECO/RECO/src/main/resources/bouchons/bouchon_eureka_startsession_client.json";
 
 	/**
 	 * retourne la réponse de la requette POST http.
@@ -35,7 +32,7 @@ public class StartSessionFixture {
 	 * @throws JSONException
 	 */
 	public PostMethod getPOSTResult(final String _param) throws HttpException,
-			IOException, JSONException {
+	IOException, JSONException {
 		final HttpClient client = new HttpClient();
 
 		final PostMethod methode = new PostMethod(URI + _param);
@@ -57,6 +54,19 @@ public class StartSessionFixture {
 	}
 
 	/**
+	 * retourne le contenue de la reponse interact (ie : OK )
+	 *
+	 * @param _param
+	 * @return
+	 * @throws JSONException
+	 * @throws IOException
+	 */
+	public String getRetourStartSession(final String _param)
+			throws JSONException, IOException {
+		return this.getPOSTResult(_param).getResponseBodyAsString();
+	}
+
+	/**
 	 * retourne le status de la reponse HTTP (ie : HTTP/1.1 200 OK)
 	 *
 	 * @param _param
@@ -66,7 +76,7 @@ public class StartSessionFixture {
 	 * @throws IOException
 	 */
 	public String getStatus(final String _param) throws JSONException,
-			IOException {
+	IOException {
 		return this.getPOSTResult(_param).getStatusLine().toString();
 	}
 }

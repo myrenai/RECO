@@ -3,6 +3,7 @@ package com.canalplus.reco.configuration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
  * @author faagni classe permettant de configurer le mapping de sortie en json.
  */
 @Configuration
-@PropertySource("classpath:recoParameters.properties")
+@PropertySources({@PropertySource("classpath:recoParameters.properties"),@PropertySource("classpath:swagger.properties")})
 public class RestConfiguration {
 
 	/**

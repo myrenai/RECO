@@ -17,6 +17,10 @@
 	<mvc:annotation-driven />
 	
 	<context:property-placeholder location="classpath:properties/recoParameters.properties" />
+	<!-- 	swagger  -->
+ 	<mvc:resources location="classpath:/swagger-ui/" mapping="/swagger-ui/**" />
+	<bean class="com.mangofactory.swagger.configuration.DocumentationConfig" />
+<!-- 	/swagger  -->	
 	
 </beans>
 

@@ -2,7 +2,8 @@
 <body>
 	<p>
 		Quand j'envoie <pre concordion:set="#fullName">/V1/Offers/context</pre>
-		pour effectuer un pré-calcul des offres alors je dois recevoir <span concordion:assertEquals="getStatus(#fullName)">HTTP/1.1 200 OK</span>
+		pour effectuer un pré-calcul des offres alors je dois recevoir <span concordion:assertEquals="getStatus(#fullName)">HTTP/1.1 200 OK</span> avec le contenu suivant :
+		 <span concordion:assertEquals="getRetourStartSession(#fullName)">{"reponse":true}</span>
 		</p>
 </body>
 </html>

@@ -1,21 +1,6 @@
 {
   "profil": [
     {
-      "name": "sessionId",
-      "value": 1,
-      "dateType": "numeric"
-    },
-    {
-      "name": "relyOnExistingSession",
-      "value": "1",
-      "dateType": "String"
-    },
-    {
-      "name": "initialDebugFlag",
-      "value": "0",
-      "dateType": "String"
-    },
-    {
       "name": "interactiveChanel",
       "value": "canal_bac_a_sable",
       "dateType": "String"

@@ -126,6 +126,11 @@
          "dataType":"string"
       },
       {
+         "name":"audienceLevel",
+         "value":"customer",
+         "dataType":"string"
+      },
+      {
          "name":"xid",
          "value":"55000f948a99c643b7232e1c",
          "dataType":"string"

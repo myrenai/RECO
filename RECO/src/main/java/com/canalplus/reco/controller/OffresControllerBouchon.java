@@ -20,19 +20,15 @@ import com.canalplus.reco.model.Parametres;
 import com.canalplus.reco.model.Resultat;
 import com.canalplus.reco.service.ServiceOffres;
 import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
-import com.wordnik.swagger.annotations.ApiParam;
-import com.wordnik.swagger.annotations.ApiResponse;
-import com.wordnik.swagger.annotations.ApiResponses;
-//swagger annotation
-@Api(value = "Test", description = "Test")
-@RestController
-@RequestMapping("/V1/Offers")
 
-public class OffresController {
+//swagger annotation
+@Api(value = "/V0/Offers", description = "balbalba test")
+@RestController
+@RequestMapping("/V0/Offers")
+public class OffresControllerBouchon {
 
 	private static final Logger logger = Logger
-			.getLogger(OffresController.class);
+			.getLogger(OffresControllerBouchon.class);
 	
 
 
@@ -55,10 +51,9 @@ public class OffresController {
 	 * @param parametres
 	 * @return
 	 */
-	@ApiOperation(value = "get Offers",responseClass="Offre.class",multiValueResponse=true)
 	@RequestMapping(value = "/next", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
 	public @ResponseBody List<Offre> getOffres(
-			 @ApiParam(value = "le profil et le context necessaire", required = true)@RequestBody Parametres parametres) {
+			@RequestBody Parametres parametres) {
 		logger.debug("pre-calcul offres");
 		List<Offre> offre = new ArrayList<Offre>();
 		final InteractRestClient interactRestClient = new InteractRestClient();

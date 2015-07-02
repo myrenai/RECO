@@ -150,12 +150,10 @@ public class InteractRestClient {
 	 * @return cmd commande
 	 * @throws JSONException
 	 */
-	private static Command createStartSessionCommand(Parametres parametres,
-			String audienceLevel) throws JSONException {
+	private static Command createStartSessionCommand(Parametres parametres) throws JSONException {
 		final CommandImpl cmd = new CommandImpl();
 		cmd.setMethodIdentifier(Command.COMMAND_STARTSESSION);
 		// Audience level
-		cmd.setAudienceLevel(audienceLevel);
 		if (parametres != null) {
 			// Event parameters
 			if (!CollectionUtils.isEmpty(parametres.getContext())) {
@@ -170,13 +168,16 @@ public class InteractRestClient {
 					if (Consts.INTERACTIVE_CHANEL_NAME.equals(parametre
 							.getName())) {
 						cmd.setInteractiveChannel(parametre.getValue());
+					}else if (Consts.AUDIENCE_LEVEL.equals(parametre
+							.getName())) {
+						cmd.setAudienceLevel(parametre.getValue());
 					}
 				}
 			}
 		}
 		// permet de re utiliser la session avec l'id session
 		// si la seesion n'existe pas, elle est cree
-		cmd.setRelyOnExistingSession(false);
+		cmd.setRelyOnExistingSession(Boolean.getBoolean(Consts.RELY_ON_EXISTING_SESSION));
 		cmd.setDebug(true);
 		return cmd;
 	}
@@ -189,13 +190,12 @@ public class InteractRestClient {
 	 * @throws IOException
 	 */
 	public BatchResponse getResponse(Parametres parametres, String url,
-			String ipName, String audienceLevel, String numberRequested,
-			boolean relyOnExistingSession, boolean debugOption)
+			String ipName, String numberRequested, boolean debugOption)
 			throws JSONException, IOException {
 		url += Consts.URL_INTERACT;
 		final String sessionId = String.valueOf(System.currentTimeMillis());
 		final List<Command> cmds = new ArrayList<Command>();
-		cmds.add(0, createStartSessionCommand(parametres, audienceLevel));
+		cmds.add(0, createStartSessionCommand(parametres));
 		cmds.add(
 				1,
 				createGetOffersCommand(ipName,

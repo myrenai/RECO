@@ -1,11 +1,19 @@
 package com.canalplus.utils;
 
 public final class Consts {
-
+	
+	/**
+	 * 	on definit la constante relyOnExistingSession a true pour recuperer la session si elle existe deja dans interact
+	 */
+	public static final String RELY_ON_EXISTING_SESSION = "true";
 	/**
 	 * Nom du canal interactif.
 	 */
 	public static final String INTERACTIVE_CHANEL_NAME = "interactiveChanel";
+	/**
+	 * Nom du canal interactif.
+	 */
+	public static final String AUDIENCE_LEVEL = "audienceLevel";
 	/**
 	 * prefix de l'audience ID.
 	 */
