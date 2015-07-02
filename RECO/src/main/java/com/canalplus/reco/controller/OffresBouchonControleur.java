@@ -41,7 +41,7 @@ public class OffresBouchonControleur {
 		InputStream file = null;
 		JSONObject jsonObject = null;
 		try {
-			file = new FileInputStream(Consts.URL_INTERACT);
+			file = new FileInputStream(Consts.LOCATION_BOUCHON_OFFRES);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -68,7 +68,7 @@ public class OffresBouchonControleur {
 		InputStream file = null;
 		JSONObject jsonObject = null;
 		try {
-			file = new FileInputStream(Consts.URL_INTERACT);
+			file = new FileInputStream(Consts.LOCATION_BOUCHON_OFFRES);
 		} catch (final FileNotFoundException e) {
 			e.printStackTrace();
 		}
