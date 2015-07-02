@@ -9,7 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.canalplus.reco.model.Offre;
-import com.canalplus.reco.model.ParametreOffre;
+import com.canalplus.reco.model.AttributOffre;
 import com.canalplus.utils.Consts;
 import com.unicacorp.interact.api.BatchResponse;
 import com.unicacorp.interact.api.NameValuePair;
@@ -32,7 +32,7 @@ public class ServiceOffres {
 		final Offre reponse = new Offre();
 		final List<Offre> listeReponse = new ArrayList<Offre>();
 
-		final List<ParametreOffre> listeParametresOffres = new ArrayList<ParametreOffre>();
+		final List<AttributOffre> listeParametresOffres = new ArrayList<AttributOffre>();
 		if (listeOffresResponse != null && listeOffresResponse.length != 0) {
 			for (final OfferList offreReponse : listeOffresResponse) {
 				final Offer[] listOffreInteract = offreReponse
@@ -82,28 +82,28 @@ public class ServiceOffres {
 	 */
 	final Offre getOffre(final Offer offre) {
 		final Offre reponse = new Offre();
-		final List<ParametreOffre> listeParametresOffres = new ArrayList<ParametreOffre>();
+		final List<AttributOffre> listeParametresOffres = new ArrayList<AttributOffre>();
 		final StringBuilder builder = new StringBuilder();
 		if (offre != null) {
 			for (final String s : offre.getOfferCode()) {
 				builder.append(s);
 			}
-			listeParametresOffres.add(new ParametreOffre(
+			listeParametresOffres.add(new AttributOffre(
 					Consts.ATTRIBUT_OFFRE_CODE, builder.toString()));
-			listeParametresOffres.add(new ParametreOffre(
+			listeParametresOffres.add(new AttributOffre(
 					Consts.ATTRIBUT_OFFRE_NOM, offre.getOfferName()));
-			listeParametresOffres.add(new ParametreOffre(
+			listeParametresOffres.add(new AttributOffre(
 					Consts.ATTRIBUT_OFFRE_DESCRIPTION, offre.getDescription()));
-			listeParametresOffres.add(new ParametreOffre(
+			listeParametresOffres.add(new AttributOffre(
 					Consts.ATTRIBUT_OFFRE_SCORE, Integer.toString(offre
 							.getScore())));
-			listeParametresOffres.add(new ParametreOffre(
+			listeParametresOffres.add(new AttributOffre(
 					Consts.ATTRIBUT_OFFRE_CODE_TRAITREMENT, offre
 							.getTreatmentCode()));
 			final NameValuePair[] attributs = offre.getAdditionalAttributes();
 			if (attributs != null && attributs.length != 0) {
 				for (final NameValuePair attribut : attributs) {
-					listeParametresOffres.add(new ParametreOffre(attribut
+					listeParametresOffres.add(new AttributOffre(attribut
 							.getName(), attribut.getValueAsString()));
 				}
 			}

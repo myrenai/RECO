@@ -1,0 +1,17 @@
+<html ng-app="myApp">
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://code.angularjs.org/1.0.3/angular.min.js"></script>
+		<script src="./js/jquery.min.js"></script>
+    	<script src="./js/rest.js"></script>
+	</head>
+
+	<body>
+<div ng-controller="myCtrl">
+<form ng-submit="sendPost()">
+    <textarea id="jsonEntry" rows="2" cols="" ng-model="jsonEntryData"></textarea>
+    <button type="submit">Send</button>
+    {{jsonEntryData}}
+</form>
+	</body>
+</html>

@@ -54,4 +54,6 @@ public final class Consts {
 	 * url interact.
 	 */
 	public static final String URL_INTERACT = "/servlet/RestServlet";
+
+	public static final String LOCATION_BOUCHON_OFFRES = "D:\\Projets\\RECO\\workspaces\\ReposRECO\\RECO\\src\\main\\resources\\bouchons\\bouchon_canal_sortie_offre.json";
 }

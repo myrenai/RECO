@@ -29,12 +29,10 @@ import com.wordnik.swagger.annotations.ApiResponses;
 @RestController
 @RequestMapping("/V1/Offers")
 
-public class OffresController {
+public class OffresControleur {
 
-	private static final Logger logger = Logger
-			.getLogger(OffresController.class);
+	private static final Logger logger = Logger.getLogger(OffresControleur.class);
 	
-
 
 	@Value("${reco.interact.url}")
 	String url;
