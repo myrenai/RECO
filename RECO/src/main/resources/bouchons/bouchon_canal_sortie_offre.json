@@ -1,0 +1,116 @@
+{
+  "offres": [
+    {
+      "offre": [
+        {
+          "name": "code",
+          "value": "000000048"
+        },
+        {
+          "name": "nom",
+          "value": "Shop Page - First Offer FR"
+        },
+        {
+          "name": "description",
+          "value": null
+        },
+        {
+          "name": "score",
+          "value": "70"
+        },
+        {
+          "name": "codeTraitement",
+          "value": "ee.31.ffffffffda1ca03c.ffffffffe098c29c"
+        },
+        {
+          "name": "RTSelectionMethod",
+          "value": null
+        },
+        {
+          "name": "validPeriodLabel",
+          "value": "A renseigner"
+        },
+        {
+          "name": "comLabel",
+          "value": "A renseigner"
+        },
+        {
+          "name": "ExpirationDuration",
+          "value": null
+        },
+        {
+          "name": "EffectiveDate",
+          "value": null
+        },
+        {
+          "name": "specialLabel",
+          "value": "FR"
+        },
+        {
+          "name": "CreativeURL",
+          "value": "shopPage_firstOffer_FR.png"
+        },
+        {
+          "name": "ExpirationDate",
+          "value": null
+        }
+      ]
+    },
+    {
+      "offre": [
+        {
+          "name": "code",
+          "value": "000000050"
+        },
+        {
+          "name": "nom",
+          "value": "Shop Page - Second Offer FR"
+        },
+        {
+          "name": "description",
+          "value": null
+        },
+        {
+          "name": "score",
+          "value": "50"
+        },
+        {
+          "name": "codeTraitement",
+          "value": "ee.33.ffffffffc50a86b4.ffffffffcb86a914"
+        },
+        {
+          "name": "RTSelectionMethod",
+          "value": null
+        },
+        {
+          "name": "validPeriodLabel",
+          "value": "A renseigner"
+        },
+        {
+          "name": "comLabel",
+          "value": "A renseigner"
+        },
+        {
+          "name": "ExpirationDuration",
+          "value": null
+        },
+        {
+          "name": "EffectiveDate",
+          "value": null
+        },
+        {
+          "name": "specialLabel",
+          "value": "FR"
+        },
+        {
+          "name": "CreativeURL",
+          "value": "shopPage_secondOffer_FR.png"
+        },
+        {
+          "name": "ExpirationDate",
+          "value": null
+        }
+      ]
+    }
+  ]
+}

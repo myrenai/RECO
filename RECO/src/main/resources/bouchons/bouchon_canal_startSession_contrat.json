@@ -1,0 +1,56 @@
+{
+  "profil": [
+    {
+      "name": "sessionId",
+      "value": 1,
+      "dateType": "numeric"
+    },
+    {
+      "name": "relyOnExistingSession",
+      "value": "1",
+      "dateType": "String"
+    },
+    {
+      "name": "initialDebugFlag",
+      "value": "0",
+      "dateType": "String"
+    },
+    {
+      "name": "interactiveChanel",
+      "value": "canal_bac_a_sable",
+      "dateType": "String"
+    },
+    {
+      "name": "audienceID_CLIENT",
+      "value": 1,
+      "dataType": "numeric"
+    },
+    {
+      "name": "audienceID_CONTRAT",
+      "value": 1,
+      "dataType": "numeric"
+    },
+    {
+      "name": "audienceLevel",
+      "value": "Contrat",
+      "dateType": "String"
+    }
+  ],
+  "contexte": [
+    {
+      "name": "CTX_PERIMETRE",
+      "value": "RESILIATION",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_FLG_LITIGE_FONDE",
+      "value": "1",
+      "dataType": "String"
+    },
+    {
+      "name": "CTX_THEME_DEMANDE",
+      "value": "Menace de résiliation",
+      "dataType": "String"
+    }
+  ]
+}
