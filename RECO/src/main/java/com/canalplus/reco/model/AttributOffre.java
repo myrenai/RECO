@@ -2,7 +2,7 @@ package com.canalplus.reco.model;
 
 import java.io.Serializable;
 
-public class ParametreOffre implements Serializable {
+public class AttributOffre implements Serializable {
 
 	/**
 	 *
@@ -14,7 +14,7 @@ public class ParametreOffre implements Serializable {
 	/**
 	 *
 	 */
-	public ParametreOffre() {
+	public AttributOffre() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -24,7 +24,7 @@ public class ParametreOffre implements Serializable {
 	 * @param name
 	 * @param value
 	 */
-	public ParametreOffre(String name, String value) {
+	public AttributOffre(String name, String value) {
 		super();
 		this.name = name;
 		this.value = value;
